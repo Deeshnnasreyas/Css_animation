@@ -1,0 +1,377 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: darkblue;
+    line-height:20px;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    -ms-grid-rows: 1fr 4fr 1.2fr 1.2fr;
+    grid-template-rows: 1fr 4fr 1.2fr 1.2fr;
+        grid-template-areas: "logo    logo  header"
+                         "main     main imgbox"
+                          "quotes  quotes imgbox"
+                          "btn1     btn2  imgbox";
+}
+.logo{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: logo;
+    padding-left: 125px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 30px;
+    font-weight: 800px;
+    background-color: rgb(199, 238, 121); 
+   
+  
+
+}
+.logo a{
+    /* margin: 30px 100p; */
+    color: darkgreen;
+    font-size: 24px;
+    font-weight:700;
+    padding-left: 125px;;
+
+}
+.main{
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: main;
+    /* background-color: yellow; */
+    padding:0 125px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 290px;
+
+}
+.main h1{
+    font-size: 36px;
+    line-height: 49px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.quotes{
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: quotes;
+    background-color:rgb(143, 245, 160);
+    padding-left: 125px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+}
+a{
+    text-decoration: none;
+}
+.quotes h2{
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700;
+}
+/* Animation effects */
+.pop-in{
+    -webkit-animation: popIn 2s cubic-bezier(0,-0.04,0.32,1.28) forwards;
+            animation: popIn 2s cubic-bezier(0,-0.04,0.32,1.28) forwards;
+    opacity: 0;
+}
+@-webkit-keyframes popIn{
+    from{
+        opacity: 0;
+        -webkit-transform:translateX(-100px) scale(0.8);
+                transform:translateX(-100px) scale(0.8);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: none;
+                transform: none;
+
+    }
+}
+@keyframes popIn{
+    from{
+        opacity: 0;
+        -webkit-transform:translateX(-100px) scale(0.8);
+                transform:translateX(-100px) scale(0.8);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: none;
+                transform: none;
+
+    }
+}
+.btn a{
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 126px;
+    -webkit-transition: background-color .2s ease-in-out ;
+    -o-transition: background-color .2s ease-in-out ;
+    transition: background-color .2s ease-in-out ;
+
+}
+.btn:hover a{
+    background-color: rgb(179, 236, 114);
+}
+.btn1{
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: btn1;
+    background-color: rgba(19, 105, 48, 0.897);
+
+}
+.btn2{
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: btn2;
+    background-color: rgb(5, 141, 16);
+
+}
+.header{
+    -ms-grid-row:1;
+    -ms-grid-column:3;
+    grid-area:header;
+    background-color: rgb(227, 252, 198);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-right: 30px;
+   
+
+}
+.header ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    /* margin-top: 20px; */
+    
+}
+.header ul li {
+    list-style: none;
+    padding: 20px;
+    font-weight: 700;
+   
+    
+    
+}
+.header ul li a{
+
+    -webkit-transition: color .2s ease-in;
+
+    -o-transition: color .2s ease-in;
+
+    transition: color .2s ease-in;
+    
+    
+}
+.header ul li:hover a{
+    color: cyan;
+}
+.imgbox{
+    -ms-grid-row:2;
+    -ms-grid-row-span:3;
+    -ms-grid-column:3;
+    grid-area:imgbox;
+    overflow: hidden;
+    background: url(https://cdn.comparitech.com/wp-content/uploads/2018/04/Network-Security.jpg) no-repeat top center;
+    background-size: cover;
+    /* background-color: teal; */
+
+}
+/* image animation */
+.slid-in{
+-webkit-animation: slidimg 2s ease-in-out 1s forwards;
+        animation: slidimg 2s ease-in-out 1s forwards;
+opacity: 0;
+}
+@-webkit-keyframes slidimg{
+    from{
+        opacity: 0;
+        -webkit-transform: translateX(150px) skewY(20deg);
+                transform: translateX(150px) skewY(20deg);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: translateX();
+                transform: translateX();
+    }
+}
+@keyframes slidimg{
+    from{
+        opacity: 0;
+        -webkit-transform: translateX(150px) skewY(20deg);
+                transform: translateX(150px) skewY(20deg);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: translateX();
+                transform: translateX();
+    }
+}
+.imgbox img{
+    width: 100%;
+}
+/* media queries */
+@media(max-width:767px){
+    
+.container{
+    height: auto;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo logo"
+    "header header"
+    "imgbox imgbox"
+    "main main"
+    "quotes quotes"
+    "btn1 btn2";
+    -ms-grid-rows: 100px 50px 30vh auto auto 70px;
+    grid-template-rows: 100px 50px 30vh auto auto 70px;
+}
+.logo{
+    padding-left:0;
+    padding-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 40px;
+    font-weight: 600
+    
+
+
+}
+.main{
+    padding:30px 24px;
+}
+.main h1{
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+    margin-bottom: 12px
+}
+.quotes{
+  
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 40p
+}
+.header{
+    padding-right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.btn a{
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: flex-start;
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 55px;
+}
+    
+.logo{
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+}
+    
+.main{
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+}
+    
+.quotes{
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+}
+    
+.btn1{
+        -ms-grid-row: 6;
+        -ms-grid-column: 1;
+}
+    
+.btn2{
+        -ms-grid-row: 6;
+        -ms-grid-column: 2;
+}
+    
+.header{
+        -ms-grid-row:2;
+        -ms-grid-column:1;
+        -ms-grid-column-span:2;
+}
+    
+.imgbox{
+        -ms-grid-row:3;
+        -ms-grid-row-span:1;
+        -ms-grid-column:1;
+        -ms-grid-column-span:2;
+}
+}
